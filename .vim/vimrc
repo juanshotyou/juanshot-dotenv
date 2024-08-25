@@ -7,70 +7,32 @@
 "                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
+set nocompatible			" Disable compatibility with vi which can cause unexpected issues.
+filetype on					" Enable type file detection. Vim will be able to try to detect the type of file in use.
+filetype plugin on			" Enable plugins and load plugin for the detected file type.
+filetype indent on			" Load an indent file for the detected file type.
+syntax on					" Turn syntax highlighting on.
+set number					" Add numbers to each line on the left-hand side.
+set cursorline				" Highlight cursor line underneath the cursor horizontally.
+set shiftwidth=5			" Set shift width to 4 spaces.
+set tabstop=4				" Set tab width to 4 columns.
+set nobackup				" Do not save backup files.
+set scrolloff=10			" Do not let cursor scroll below or above N number of lines when scrolling.
+set incsearch				" While searching though a file incrementally highlight matching characters as you type.
+set ignorecase				" Ignore capital letters during search.
+set showcmd					" Show partial command you type in the last line of the screen.
+set showmode 				" Show the mode you are on the last line.
+set showmatch 				" Show matching words during a search.
+set hlsearch 				" Use highlighting when doing a search.
+set history=10000 			" Set the commands to save in history default number is 20.
+set wildmenu 				" Enable auto completion menu after pressing TAB.
+set wildmode=list:longest 	" Make wildmenu behave like similar to Bash completion.
+set title					" Show file title
+set guifont=hack_nerd_font:h11
+" set cc=100					" Enable visual limit at 100 chars for good code formatting practice
 
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
+let g:kite_supported_languages = ['python', 'javascript']
 
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
-
-" Load an indent file for the detected file type.
-filetype indent on
-
-" Turn syntax highlighting on.
-syntax on
-
-" Add numbers to each line on the left-hand side.
-set number
-
-" Highlight cursor line underneath the cursor horizontally.
-"set cursorline
-" Not a fan of this edit
-" Highlight cursor line underneath the cursor vertically.
-"set cursorcolumn
-" Not a fan of this edit
-
-" Set shift width to 4 spaces.
-set shiftwidth=5
-
-" Set tab width to 4 columns.
-set tabstop=4
-
-" Do not save backup files.
-set nobackup
-
-" Do not let cursor scroll below or above N number of lines when scrolling.
-set scrolloff=10
-
-" While searching though a file incrementally highlight matching characters as
-" you type.
-set incsearch
-
-" Ignore capital letters during search.
-set ignorecase
-
-" Show partial command you type in the last line of the screen.
-set showcmd
-
-" Show the mode you are on the last line.
-set showmode
-
-" Show matching words during a search.
-set showmatch
-
-" Use highlighting when doing a search.
-set hlsearch
-
-" Set the commands to save in history default number is 20.
-set history=1000
-
-" Enable auto completion menu after pressing TAB.
-set wildmenu
-
-" Make wildmenu behave like similar to Bash completion.
-set wildmode=list:longest
 
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
@@ -78,7 +40,40 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " PLUGINS ---------------------------------------------------------------- {{{
 
-" " Plugin code goes here.
+" Plugin code goes here.
+
+call plug#begin('~/.vim/autoload/plug')
+
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-polyglot'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+
+call plug#end()
+
+" Plugin configs
+
+colorscheme gruvbox
+let g:bargreybars_auto=0
+let g:airline_solorized_bg='dark'
+let g:airline_powerline_fonts=1
+let g:airline#extension#tabline#enable=1
+let g:airline#extension#tabline#left_sep=' '
+let g:airline#extension#tabline#left_alt_sep='|'
+let g:airline#extension#tabline#formatter='unique_tail'
+let NERDTreeQuitOnOpen=1
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = '#'
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = '#'
 
 " " }}}
 
