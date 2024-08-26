@@ -77,6 +77,13 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = '#'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = '#'
+let g:ale_virtualtext_cursor = 'current'
+let g:ale_linters = {
+\   'python': ['flake8', 'pylint'],
+\   'go': ['vet', 'errcheck'],
+\}
+let g:ale_python_flake8_options = '--ignore=E501'
+let g:ale_echo_msg_format='[%linter%] [%severity%] %code% %s'
 
 colorscheme gruvbox
 " " }}}
