@@ -59,6 +59,7 @@ Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
