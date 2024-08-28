@@ -32,7 +32,7 @@ set guifont=hack_nerd_font:h11
 " set cc=100					" Enable visual limit at 100 chars for good code formatting practice
 set bg=dark
 
-let g:kite_supported_languages = ['python', 'javascript']
+let g:kite_supported_languages = ['python', 'javascript', 'go']
 
 
 " There are certain files that we would never want to edit with Vim.
@@ -83,7 +83,8 @@ let g:ale_linters = {
 \   'go': ['vet', 'errcheck'],
 \}
 let g:ale_python_flake8_options = '--ignore=E501'
-let g:ale_echo_msg_format='[%linter%] [%severity%] %code% %s'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %code% %s'
+let g:gruvbox_contrast_dark = 'soft'
 
 colorscheme gruvbox
 " " }}}
