@@ -28,9 +28,10 @@ set history=10000 			" Set the commands to save in history default number is 20.
 set wildmenu 				" Enable auto completion menu after pressing TAB.
 set wildmode=list:longest 	" Make wildmenu behave like similar to Bash completion.
 set title					" Show file title
+set cc=100					" Enable visual limit at 100 chars for good code formatting practice
 set guifont=hack_nerd_font:h11
-" set cc=100					" Enable visual limit at 100 chars for good code formatting practice
 set bg=dark
+set relativenumber
 
 let g:kite_supported_languages = ['python', 'javascript']
 
